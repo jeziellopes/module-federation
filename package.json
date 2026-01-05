@@ -1,0 +1,34 @@
+{
+  "name": "module-federation",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "repository": "git@github.com:jeziellopes/module-federation.git",
+  "scripts": {
+    "install:host:vite": "yarn --cwd react-vite-host",
+    "install:host:next": "yarn --cwd next-host",
+    "install:remote:vite": "yarn --cwd react-vite-remote",
+    "install:remote:next": "yarn --cwd next-remote",
+    "install:host:webpack": "yarn --cwd react-webpack-host",
+    "install:remote:webpack": "yarn --cwd react-webpack-remote",
+    "install:apps:webpack": "concurrently \"yarn install:host:webpack\" \"yarn install:remote:webpack\"", 
+    "install:apps:vite": "concurrently \"yarn install:host:vite\" \"yarn install:remote:vite\"",
+    "install:apps:next": "concurrently \"yarn install:host:next\" \"yarn install:remote:next\"",
+    "start:host:vite": "yarn --cwd react-vite-host preview",
+    "start:remote:vite": "yarn --cwd react-vite-remote preview",
+    "start:host:next": "yarn --cwd next-host preview",
+    "start:remote:next": "yarn --cwd next-remote preview",
+    "start:host:webpack": "yarn --cwd react-webpack-host start",
+    "start:remote:webpack": "yarn --cwd react-webpack-remote start",
+    "start": "concurrently \"yarn start:app\" \"yarn start:modules\"",
+    "start:next": "concurrently \"yarn start:app:next\" \"yarn start:modules:next\""
+  },
+  "workspaces": [
+    "react*",
+    "next*",
+    "shared/*"
+  ],
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}

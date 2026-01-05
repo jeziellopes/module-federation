@@ -1,0 +1,16 @@
+.container {
+  position: absolute;
+  left: calc((100vw - 800px) / 2);
+  top: calc((100vh - 600px - 200px) / 2);
+}
+
+.example {
+  border: 2px #fff solid;
+  border-style: dashed;
+  padding: 16px;
+  margin-top: 40px;
+}
+
+.active {
+  color: orange;
+}

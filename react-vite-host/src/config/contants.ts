@@ -1,0 +1,1 @@
+export const MFE_LOADING_TEXT='INDISPONIVEL'
